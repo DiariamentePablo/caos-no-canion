@@ -1,12 +1,7 @@
 # DEVLOG
 
-Hoje eu fiz:
-- Colisões
-- Movimentação sem gravidade
-- Objeto do Player
-- Cenário da vila
-- Um tileset
+## Aula 08 -- 07 10
 
-## Erros
-
-Surpreendentemente não houve muitas dificuldades, o único problema que deu foi na hora de adicionar as colisões dos arbustos altos, pois a colisão não estava preenchendo o tile inteiro
+O que eu fiz: Colisões, movimentação sem gravidade, objeto do Player, cenário da vila, um tileset
+O que travou: Ao adicionar as colisões dos arbustos altos, a colisão não estava preenchendo o tile inteiro
+Como Resolvi: Um ajuste das colisões em TileSet
