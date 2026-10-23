@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b05w5l75ilnmx"]
+
+[ext_resource type="Script" uid="uid://bmyoypfntwuau" path="res://scripts/inimigo.gd" id="1_dc5j5"]
+[ext_resource type="Texture2D" uid="uid://d0e47ho6j7o8q" path="res://sprites/personagem.png" id="1_yagdu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yagdu"]
+size = Vector2(10, 6)
+
+[node name="Inimigo" type="CharacterBody2D" groups=["inimigo"]]
+collision_layer = 4
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("1_dc5j5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+z_index = 1
+texture = ExtResource("1_yagdu")
+hframes = 4
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_yagdu")
