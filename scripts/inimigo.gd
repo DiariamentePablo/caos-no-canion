@@ -4,12 +4,17 @@ extends CharacterBody2D
 @export var vida: int = 1
 @export var grupo_alvo: String = "player"
 
+@onready var agente: NavigationAgent2D = $NavigationAgent2D
+
 func _physics_process(delta: float) -> void:
-	var jogador := get_tree().get_first_node_in_group(grupo_alvo) as Node2D
-	if jogador == null:
+	var alvo := get_tree().get_first_node_in_group(grupo_alvo) as Node2D
+	if alvo == null:
 		return
 	
-	velocity = global_position.direction_to(jogador.global_position) * velocidade
+	# O agente calcula o caminho; o inimigo só anda até o próximo ponto dele.
+	agente.target_position = alvo.global_position
+	var proximo := agente.get_next_path_position()
+	velocity = global_position.direction_to(proximo) * velocidade
 	move_and_slide()
 
 func levar_golpe() -> void:

@@ -4,8 +4,10 @@ extends Node2D
 @onready var horda: Timer = $Horda
 @onready var relogio: Timer = $Relogio
 @onready var alvo:= $Objeto
+@onready var jogador:= $Jogador
 @onready var texto_vida: Label = $HUD/Vida
 @onready var texto_tempo: Label = $HUD/Tempo
+@onready var texto_jogador: Label = $HUD/VidaJogador
 
 func _on_horda_timeout() -> void:
 	var inimigo := cena_inimigo.instantiate()
@@ -22,7 +24,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	texto_vida.text = "Vida: %d" % (alvo.vida - alvo.toques)
+	texto_vida.text = "Vida do Alvo: %d" % (alvo.vida - alvo.toques)
+	texto_jogador.text = "Vida do Jogador: %d" % jogador.vida
 	texto_tempo.text = "Tempo: %d" % ceil(relogio.time_left)
 
 func _on_relogio_timeout() -> void:
