@@ -3,7 +3,7 @@ extends Node2D
 @export var cena_inimigo: PackedScene
 @onready var horda: Timer = $Horda
 @onready var relogio: Timer = $Relogio
-@onready var jogador := $Jogador
+@onready var alvo:= $Objeto
 @onready var texto_vida: Label = $HUD/Vida
 @onready var texto_tempo: Label = $HUD/Tempo
 
@@ -22,7 +22,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	texto_vida.text = "Vida: %d" % jogador.vida
+	texto_vida.text = "Vida: %d" % (alvo.vida - alvo.toques)
 	texto_tempo.text = "Tempo: %d" % ceil(relogio.time_left)
 
 func _on_relogio_timeout() -> void:

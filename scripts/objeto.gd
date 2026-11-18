@@ -1,6 +1,7 @@
 extends Area2D
 
 var toques := 0
+@export var vida: int = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,5 +16,5 @@ func _process(delta: float) -> void:
 func _on_body_entered(inimigo: Node2D) -> void:
 	inimigo.queue_free()
 	toques += 1
-	if toques >= 5:
+	if toques >= vida:
 		get_tree().current_scene.perder()
