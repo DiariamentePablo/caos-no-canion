@@ -23,3 +23,7 @@ Como resolvi: Nova variável vida adicionada ao cálculo de dano recebido para s
 O que eu fiz: Função de pathfinding adicionada aos inimigos, indicadores visuais adicionados para o ataque do jogador, complemento para a UI agora mostra a vida do objeto e do jogador simultaneamente.
 O que travou: Problemas desconhecidos com o tamanho do espaço livre ao redor de objetos fecharam rotas de caminho que deveriam estar abertas aos inimigos.
 Como resolvi: Mitigado com ajustes ao parâmetro Cells -> Border Size de 0 para 6, ainda não resolvido.
+
+### 18/11
+
+O que eu fiz: Leves ajustes ao tileset, as peças não são utilizadas então inconsequente ao mapa atual.
